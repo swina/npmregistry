@@ -22,6 +22,85 @@ Getting up and running is as easy as 1, 2, 3.
 
 ## Microservice used to retrieve the dependencies tree of a NPM package
 
+This is a simple microservice to inspect a NPM package dependencies. At first query creates a tree with 2 levels dependencies. 
+
+Example: socket.io - 4.1.3
+
+```
+
+{
+    "name": "socket.io",
+    "version": "4.1.3",
+    "description": "node.js realtime framework server",
+    ...
+    "dependencies": {
+        "@types/cookie": {
+            "version": "^0.4.0",
+            "isValid": ">=0.4.0 <0.5.0-0",
+            "dependencies": {}
+        },
+        "@types/cors": {
+            "version": "^2.8.10",
+            "isValid": ">=2.8.10 <3.0.0-0",
+            "dependencies": {}
+        },
+        "@types/node": {
+            "version": ">=10.0.0",
+            "isValid": ">=10.0.0",
+            "dependencies": {}
+        },
+        "accepts": {
+            "version": "~1.3.4",
+            "isValid": ">=1.3.4 <1.4.0-0",
+            "dependencies": {
+                "mime-types": "~2.1.16",
+                "negotiator": "0.6.1"
+            }
+        },
+        "base64id": {
+            "version": "~2.0.0",
+            "isValid": ">=2.0.0 <2.1.0-0",
+            "dependencies": null
+        },
+        "debug": {
+            "version": "~4.3.1",
+            "isValid": ">=4.3.1 <4.4.0-0",
+            "dependencies": {
+                "ms": "2.1.2"
+            }
+        },
+        "engine.io": {
+            "version": "~5.1.1",
+            "isValid": ">=5.1.1 <5.2.0-0",
+            "dependencies": {
+                "accepts": "~1.3.4",
+                "base64id": "2.0.0",
+                "cookie": "~0.4.1",
+                "cors": "~2.8.5",
+                "debug": "~4.3.1",
+                "engine.io-parser": "~4.0.0",
+                "ws": "~7.4.2"
+            }
+        },
+        "socket.io-adapter": {
+            "version": "~2.3.1",
+            "isValid": ">=2.3.1 <2.4.0-0",
+            "dependencies": null
+        },
+        "socket.io-parser": {
+            "version": "~4.0.4",
+            "isValid": ">=4.0.4 <4.1.0-0",
+            "dependencies": {
+                "@types/component-emitter": "^1.2.10",
+                "component-emitter": "~1.3.0",
+                "debug": "~4.3.1"
+            }
+        }
+    },
+    ...
+
+```
+
 #### Service :
 
 ```
@@ -34,7 +113,6 @@ http://localhost:3030/npmregistry?name=package_name&version=package_version
 ```
 ./src/hooks/npmregistry.ts
 ```
-
 
 #### Package Version
 
