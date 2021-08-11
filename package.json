@@ -23,12 +23,11 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "test": "npm run compile && npm run jest",
+    "test": "npm run compile && npm run mocha",
     "dev": "ts-node-dev --no-notify src/",
     "start": "node lib/",
-    "jest": "jest  --forceExit",
+    "mocha": "ts-mocha \"test/*/.ts\" --recursive --exit",
     "compile": "shx rm -rf lib/ && tsc",
-    "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src",
     "build": "npm run compile"
   },
   "types": "lib/",
