@@ -122,10 +122,14 @@ Service will use ```semver``` package to follow the Semantic Versioning specific
  semver.minVersion(version)
 ```
 
+#### Backend Demo (Heroku Dyno)
+
+[DEMO](https://npmdep.herokuapp.com/npmregistry?name=socket.io&version=4.1.3)
+
 #### Frontend demo 
 
 A simple frontend created with Vue.js using a reiterative component as tree display.
-
+[Frontend Demo Vue](https://vue-npmpackage.vercel.app/)
 
 ## About
 
