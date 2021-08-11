@@ -25,10 +25,11 @@
   "scripts": {
     "test": "npm run compile && npm run jest",
     "dev": "ts-node-dev --no-notify src/",
-    "start": "node dist/index.js",
+    "start": "node lib/",
     "jest": "jest  --forceExit",
     "compile": "shx rm -rf lib/ && tsc",
-    "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src"
+    "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src",
+    "build": "npm run compile"
   },
   "types": "lib/",
   "dependencies": {
