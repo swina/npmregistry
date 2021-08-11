@@ -1,10 +1,6 @@
-# anto
+# NPMRegistry Package Dependencies
 
 > npm dependencies tree
-
-## About
-
-This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
 
 ## Getting Started
 
@@ -14,7 +10,7 @@ Getting up and running is as easy as 1, 2, 3.
 2. Install your dependencies
 
     ```
-    cd path/to/anto
+    cd path/to/install/folder
     npm install
     ```
 
@@ -23,6 +19,40 @@ Getting up and running is as easy as 1, 2, 3.
     ```
     npm start
     ```
+
+## Microservice used to retrieve the dependencies tree of a NPM package
+
+#### Service :
+
+```
+http://localhost:3030/npmregistry?name=package_name&version=package_version 
+
+```
+
+#### Hook
+
+```
+./src/hooks/npmregistry.ts
+```
+
+
+#### Package Version
+
+Service will use ```semver``` package to follow the Semantic Versioning specification thru the function :
+
+```
+ semver.minVersion(version)
+```
+
+#### Frontend demo 
+
+A simple frontend created with Vue.js using a reiterative component as tree display.
+
+
+## About
+
+This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
+
 
 ## Testing
 
