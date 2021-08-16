@@ -17,7 +17,8 @@ export interface NPMPackage {
   
 export interface NPMDependencies {
     name: string;
-    version: string;
+    version:string;
+    isValid:string;
     dependencies?:{
         [packageName: string ] : string;
     };

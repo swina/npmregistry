@@ -23,7 +23,7 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "test": "npm run compile && npm run mocha",
+    "test": "npm run compile && jest",
     "dev": "ts-node-dev --no-notify src/",
     "start": "node lib/",
     "mocha": "ts-mocha \"test/*/.ts\" --recursive --exit",
